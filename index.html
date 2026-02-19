@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choghadiya Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Choghadiya Finder</h1>
+        <p>
+          Get auspicious and inauspicious time ranges based on location, date, and
+          timezone.
+        </p>
+      </header>
+
+      <section class="card controls">
+        <div class="field-grid">
+          <label>
+            Latitude
+            <input id="latitude" type="number" step="0.0001" value="28.6139" />
+          </label>
+          <label>
+            Longitude
+            <input id="longitude" type="number" step="0.0001" value="77.2090" />
+          </label>
+          <label>
+            Date
+            <input id="date" type="date" />
+          </label>
+          <label>
+            Timezone
+            <select id="timezone"></select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="use-location" type="button">Use My Location</button>
+          <button id="calculate" type="button">Calculate Choghadiya</button>
+        </div>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="results-grid">
+        <article class="card">
+          <h2>Day Choghadiya (Sunrise → Sunset)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Nature</th>
+                <th>Time Range</th>
+              </tr>
+            </thead>
+            <tbody id="day-results"></tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h2>Night Choghadiya (Sunset → Next Sunrise)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Nature</th>
+                <th>Time Range</th>
+              </tr>
+            </thead>
+            <tbody id="night-results"></tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
